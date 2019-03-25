@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z $1 ]; then
+    echo "Docker image not set, exiting..."
+    exit 0
+fi
+
 HOST_IP=$(hostname -i)
 IMAGE=${1//\//-}
 TIMESTAMP=$(date '+%m-%d-%Y-%Hh%Mm%Ss')

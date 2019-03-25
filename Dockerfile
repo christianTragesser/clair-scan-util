@@ -6,4 +6,4 @@ RUN apk --upgrade add curl --no-cache && \
 
 COPY clair-scan.sh /opt/clair-scan.sh
 
-ENTRYPOINT ["/opt/clair-scan.sh"]
+CMD ["sh", "-c", "/opt/clair-scan.sh $IMG"]
